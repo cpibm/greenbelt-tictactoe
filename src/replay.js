@@ -7,11 +7,16 @@ class Replay {
     this.board = new Board();
   }
 
-  mapMovementsToPlayers() {
-    return [
-      { player: new PlayerX(), position: 'top-left' },
-      { player: new PlayerO(), position: 'top-center' },
-    ];
+  mapMovementsToPlayers(movements) {
+    const players = {
+      O: new PlayerO(),
+      X: new PlayerX(),
+    };
+
+    return movements.map((m) => ({
+      player: players[m.player],
+      position: m.position,
+    }));
   }
 }
 
