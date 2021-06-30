@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "cdb8db84-bf16-4089-aed8-7bb7cad185e0",
+		"name": "TicTacToe - GreenBelt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Game",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedResponse = '{\"winner\":null,\"board\":[\" \",\" \",\" \",\" \",\" \",\" \",\" \",\" \",\" \"],\"movements\":[],\"asciiMovements\":[],\"player\":\"X\"}';",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(expectedResponse);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api/tictactoe/newgame",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"tictactoe",
+						"newgame"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bot Game Diagonal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedResponse = \"{\\\"winner\\\":\\\"X\\\",\\\"board\\\":[\\\"X\\\",\\\"O\\\",\\\" \\\",\\\"O\\\",\\\"X\\\",\\\" \\\",\\\" \\\",\\\" \\\",\\\"X\\\"],\\\"movements\\\":[{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"top-left\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"top-center\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"mid-center\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"mid-left\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"bottom-right\\\"}],\\\"asciiMovements\\\":[\\\"X| | \\\\n-+-+-\\\\n | | \\\\n-+-+-\\\\n | | \\\",\\\"X|O| \\\\n-+-+-\\\\n | | \\\\n-+-+-\\\\n | | \\\",\\\"X|O| \\\\n-+-+-\\\\n |X| \\\\n-+-+-\\\\n | | \\\",\\\"X|O| \\\\n-+-+-\\\\nO|X| \\\\n-+-+-\\\\n | | \\\",\\\"X|O| \\\\n-+-+-\\\\nO|X| \\\\n-+-+-\\\\n | |X\\\"]}\";",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(expectedResponse);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api/tictactoe/botgame/diagonal",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"tictactoe",
+						"botgame",
+						"diagonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bot Game Horizontal",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedResponse = \"{\\\"winner\\\":\\\"O\\\",\\\"board\\\":[\\\" \\\",\\\"X\\\",\\\" \\\",\\\"O\\\",\\\"O\\\",\\\"O\\\",\\\" \\\",\\\"X\\\",\\\"X\\\"],\\\"movements\\\":[{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"top-center\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"mid-left\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"bottom-center\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"mid-center\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"bottom-right\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"mid-right\\\"}],\\\"asciiMovements\\\":[\\\" |X| \\\\n-+-+-\\\\n | | \\\\n-+-+-\\\\n | | \\\",\\\" |X| \\\\n-+-+-\\\\nO| | \\\\n-+-+-\\\\n | | \\\",\\\" |X| \\\\n-+-+-\\\\nO| | \\\\n-+-+-\\\\n |X| \\\",\\\" |X| \\\\n-+-+-\\\\nO|O| \\\\n-+-+-\\\\n |X| \\\",\\\" |X| \\\\n-+-+-\\\\nO|O| \\\\n-+-+-\\\\n |X|X\\\",\\\" |X| \\\\n-+-+-\\\\nO|O|O\\\\n-+-+-\\\\n |X|X\\\"]}\";",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(expectedResponse);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api/tictactoe/botgame/horizontal",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"tictactoe",
+						"botgame",
+						"horizontal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bot Game Vertical",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedResponse = \"{\\\"winner\\\":\\\"O\\\",\\\"board\\\":[\\\"X\\\",\\\"O\\\",\\\" \\\",\\\"X\\\",\\\"O\\\",\\\" \\\",\\\" \\\",\\\"O\\\",\\\"X\\\"],\\\"movements\\\":[{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"top-left\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"top-center\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"mid-left\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"mid-center\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"bottom-right\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"bottom-center\\\"}],\\\"asciiMovements\\\":[\\\"X| | \\\\n-+-+-\\\\n | | \\\\n-+-+-\\\\n | | \\\",\\\"X|O| \\\\n-+-+-\\\\n | | \\\\n-+-+-\\\\n | | \\\",\\\"X|O| \\\\n-+-+-\\\\nX| | \\\\n-+-+-\\\\n | | \\\",\\\"X|O| \\\\n-+-+-\\\\nX|O| \\\\n-+-+-\\\\n | | \\\",\\\"X|O| \\\\n-+-+-\\\\nX|O| \\\\n-+-+-\\\\n | |X\\\",\\\"X|O| \\\\n-+-+-\\\\nX|O| \\\\n-+-+-\\\\n |O|X\\\"]}\";",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(expectedResponse);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api/tictactoe/botgame/vertical",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"tictactoe",
+						"botgame",
+						"vertical"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bot Game Draw",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const expectedResponse = \"{\\\"winner\\\":\\\"draw\\\",\\\"board\\\":[\\\"X\\\",\\\"O\\\",\\\"O\\\",\\\"O\\\",\\\"X\\\",\\\"X\\\",\\\"X\\\",\\\"X\\\",\\\"O\\\"],\\\"movements\\\":[{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"bottom-left\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"top-center\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"mid-center\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"top-right\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"top-left\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"mid-left\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"mid-right\\\"},{\\\"player\\\":\\\"O\\\",\\\"position\\\":\\\"bottom-right\\\"},{\\\"player\\\":\\\"X\\\",\\\"position\\\":\\\"bottom-center\\\"}],\\\"asciiMovements\\\":[\\\" | | \\\\n-+-+-\\\\n | | \\\\n-+-+-\\\\nX| | \\\",\\\" |O| \\\\n-+-+-\\\\n | | \\\\n-+-+-\\\\nX| | \\\",\\\" |O| \\\\n-+-+-\\\\n |X| \\\\n-+-+-\\\\nX| | \\\",\\\" |O|O\\\\n-+-+-\\\\n |X| \\\\n-+-+-\\\\nX| | \\\",\\\"X|O|O\\\\n-+-+-\\\\n |X| \\\\n-+-+-\\\\nX| | \\\",\\\"X|O|O\\\\n-+-+-\\\\nO|X| \\\\n-+-+-\\\\nX| | \\\",\\\"X|O|O\\\\n-+-+-\\\\nO|X|X\\\\n-+-+-\\\\nX| | \\\",\\\"X|O|O\\\\n-+-+-\\\\nO|X|X\\\\n-+-+-\\\\nX| |O\\\",\\\"X|O|O\\\\n-+-+-\\\\nO|X|X\\\\n-+-+-\\\\nX|X|O\\\"]}\";",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(expectedResponse);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{hostname}}/api/tictactoe/botgame/draw",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"tictactoe",
+						"botgame",
+						"draw"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hostname",
+			"value": "localhost:3000",
+			"disabled": true
+		},
+		{
+			"key": "hostname",
+			"value": "https://greenbelt-tictactoe.herokuapp.com"
+		}
+	]
+}

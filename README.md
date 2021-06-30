@@ -7,3 +7,9 @@ Travis [![Build Status](https://travis-ci.com/cpibm/greenbelt-tictactoe.svg?bran
 - `npm run test:coverage`: to execute your test suite and collect the coverage statistics
 - `npm run lint`: to manually execute eslint
 - `npm run fix`: to manually execute eslint and autofix problems
+
+## Testing instructions
+ 1. Clone this repository
+ 2. Execute `npm install` in the cloned repo directory
+ 3. **CLI testing:** execute `npm run game`
+ 4. **API testing:** import the `TicTacToe - GreenBelt.postman_collection.json` Postman collection

@@ -7,6 +7,6 @@ The graduation for the green belt requires to get back your TicTacToe Kata(the o
 
 
 ## US2: API - print on the screen all the moves until we got a victory or draw.
-- receive a JSON from the TicTacToe API that contains all the moves of a game in BOT mode and the final state of the game
-- must run in bot mode
-- Given a TicTacToe API, whena newgame is requested via `/api/TicTacToe/newGame`, then is provided to the requester a JSON with a game played in BOT mode
+- ✅ receive a JSON from the TicTacToe API that contains all the moves of a game in BOT mode and the final state of the game
+- ✅ must run in bot mode
+- ✅ Given a TicTacToe API, whena newgame is requested via `/api/TicTacToe/newGame`, then is provided to the requester a JSON with a game played in BOT mode
