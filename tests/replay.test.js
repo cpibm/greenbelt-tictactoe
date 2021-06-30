@@ -6,6 +6,11 @@ describe('I can replay a saved game', () => {
   describe('it can load a list of movements', () => {
     const replay = new Replay();
 
+    test('initial grid should be [" "," "," "," "," "," "," "," "," "]', () => {
+      const { board } = replay;
+      expect(board.grid).toStrictEqual([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']);
+    });
+
     test('each movement in list is mapped to the correct player object', () => {
       const movements = [
         { player: 'X', position: 'top-left' },
@@ -33,10 +38,6 @@ describe('I can replay a saved game', () => {
   });
 
   describe('I can replay a vertical victory saved game', () => {
-    const replay = new Replay();
-    const { board } = replay;
-    test('initial grid should be [" "," "," "," "," "," "," "," "," "]', () => {
-      expect(board.grid).toStrictEqual([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']);
-    });
+    // const replay = new Replay();
   });
 });
