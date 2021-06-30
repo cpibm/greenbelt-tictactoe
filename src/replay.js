@@ -5,6 +5,7 @@ const { PlayerX } = require('./playerX');
 class Replay {
   constructor() {
     this.board = new Board();
+    this.movements = [];
   }
 
   mapMovementsToPlayers(movements) {
@@ -17,6 +18,10 @@ class Replay {
       player: players[m.player],
       position: m.position,
     }));
+  }
+
+  loadGame(movements) {
+    this.movements = this.mapMovementsToPlayers(movements);
   }
 }
 

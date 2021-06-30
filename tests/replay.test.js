@@ -15,6 +15,21 @@ describe('I can replay a saved game', () => {
       expect(firstMove.player).toBeInstanceOf(PlayerX);
       expect(secondMove.player).toBeInstanceOf(PlayerO);
     });
+
+    test('a movement list can be loaded for the replay', () => {
+      const movements = [
+        { player: 'X', position: 'top-left' },
+        { player: 'O', position: 'top-center' },
+      ];
+
+      const expectedMovements = [
+        { player: new PlayerX(), position: 'top-left' },
+        { player: new PlayerO(), position: 'top-center' },
+      ];
+
+      replay.loadGame(movements);
+      expect(replay.movements).toStrictEqual(expectedMovements);
+    });
   });
 
   describe('I can replay a vertical victory saved game', () => {
