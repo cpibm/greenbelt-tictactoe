@@ -1,0 +1,36 @@
+exports.gameTypes = {
+  horizontal: [
+    { player: 'X', position: 'top-center' },
+    { player: 'O', position: 'mid-left' },
+    { player: 'X', position: 'bottom-center' },
+    { player: 'O', position: 'mid-center' },
+    { player: 'X', position: 'bottom-right' },
+    { player: 'O', position: 'mid-right' },
+  ],
+  diagonal: [
+    { player: 'X', position: 'top-left' },
+    { player: 'O', position: 'top-center' },
+    { player: 'X', position: 'mid-center' },
+    { player: 'O', position: 'mid-left' },
+    { player: 'X', position: 'bottom-right' },
+  ],
+  vertical: [
+    { player: 'X', position: 'top-left' },
+    { player: 'O', position: 'top-center' },
+    { player: 'X', position: 'mid-left' },
+    { player: 'O', position: 'mid-center' },
+    { player: 'X', position: 'bottom-right' },
+    { player: 'O', position: 'bottom-center' },
+  ],
+  draw: [
+    { player: 'X', position: 'bottom-left' },
+    { player: 'O', position: 'top-center' },
+    { player: 'X', position: 'mid-center' },
+    { player: 'O', position: 'top-right' },
+    { player: 'X', position: 'top-left' },
+    { player: 'O', position: 'mid-left' },
+    { player: 'X', position: 'mid-right' },
+    { player: 'O', position: 'bottom-right' },
+    { player: 'X', position: 'bottom-center' },
+  ],
+};
