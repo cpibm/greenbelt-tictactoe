@@ -6,6 +6,7 @@ class Replay {
   constructor() {
     this.board = new Board();
     this.movements = [];
+    this.asciiMovements = [];
   }
 
   mapMovementsToPlayers(movements) {
@@ -27,6 +28,7 @@ class Replay {
   execute() {
     this.movements.forEach((m) => {
       this.board.drawPin(m.player, m.position);
+      this.asciiMovements.push(this.board.prepareTheConsoleOutput());
     });
   }
 }

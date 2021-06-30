@@ -38,7 +38,6 @@ describe('I can replay a saved game', () => {
   });
 
   describe('I can replay a vertical victory saved game', () => {
-    const replay = new Replay();
     const verticalMovements = [
       { player: 'X', position: 'top-left' },
       { player: 'O', position: 'top-center' },
@@ -49,10 +48,26 @@ describe('I can replay a saved game', () => {
     ];
 
     test('the final grid should contain ["X","O"," ","X","O"," "," ","O","X"]', () => {
+      const replay = new Replay();
       const { board } = replay;
       replay.loadGame(verticalMovements);
       replay.execute();
       expect(board.grid).toStrictEqual(['X', 'O', ' ', 'X', 'O', ' ', ' ', 'O', 'X']);
+    });
+
+    test('a list of ASCII movements should be generated', () => {
+      const expectedAsciiMovements = [
+        'X| | \n-+-+-\n | | \n-+-+-\n | | ',
+        'X|O| \n-+-+-\n | | \n-+-+-\n | | ',
+        'X|O| \n-+-+-\nX| | \n-+-+-\n | | ',
+        'X|O| \n-+-+-\nX|O| \n-+-+-\n | | ',
+        'X|O| \n-+-+-\nX|O| \n-+-+-\n | |X',
+        'X|O| \n-+-+-\nX|O| \n-+-+-\n |O|X',
+      ];
+      const replay = new Replay();
+      replay.loadGame(verticalMovements);
+      replay.execute();
+      expect(replay.asciiMovements).toStrictEqual(expectedAsciiMovements);
     });
   });
 
