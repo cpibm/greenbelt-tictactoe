@@ -55,4 +55,26 @@ describe('I can replay a saved game', () => {
       expect(board.grid).toStrictEqual(['X', 'O', ' ', 'X', 'O', ' ', ' ', 'O', 'X']);
     });
   });
+
+  describe('I can replay a draw saved game', () => {
+    const replay = new Replay();
+    const { board } = replay;
+    const drawMovements = [
+      { player: 'X', position: 'bottom-left' },
+      { player: 'O', position: 'top-center' },
+      { player: 'X', position: 'mid-center' },
+      { player: 'O', position: 'top-right' },
+      { player: 'X', position: 'top-left' },
+      { player: 'O', position: 'mid-left' },
+      { player: 'X', position: 'mid-right' },
+      { player: 'O', position: 'bottom-right' },
+      { player: 'X', position: 'bottom-center' },
+    ];
+    replay.loadGame(drawMovements);
+    replay.execute();
+
+    test('the final grid should contain ["X","O","O","O","X","X","X","X","O"]', () => {
+      expect(board.grid).toStrictEqual(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'X', 'O']);
+    });
+  });
 });
