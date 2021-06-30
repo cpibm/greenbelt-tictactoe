@@ -1,5 +1,6 @@
-## Usage:
+Travis [![Build Status](https://travis-ci.com/cpibm/greenbelt-tictactoe.svg?branch=main)](https://travis-ci.com/cpibm/greenbelt-tictactoe)
 
+## Usage:
 - `npm run test`: to execute your test suite
 - `npm run test:watch`: to execute your test suite on every save
 - `npm run test:coverage`: to execute your test suite and collect the coverage statistics

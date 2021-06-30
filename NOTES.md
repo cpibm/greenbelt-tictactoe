@@ -1,0 +1,3 @@
+- thought of creating a replay function to show the games, gonna pass it a movement list and rebuild a board from it
+- I might need to create some sample games to show
+- I might need to add some selector to show the different winning conditions
