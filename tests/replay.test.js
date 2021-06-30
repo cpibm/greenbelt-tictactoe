@@ -95,6 +95,10 @@ describe('I can replay a saved game', () => {
     replay.loadGame(drawMovements);
     replay.execute();
 
+    test('the game should end as "draw"', () => {
+      expect(replay.winner).toEqual('draw');
+    });
+
     test('the final grid should contain ["X","O","O","O","X","X","X","X","O"]', () => {
       expect(board.grid).toStrictEqual(['X', 'O', 'O', 'O', 'X', 'X', 'X', 'X', 'O']);
     });

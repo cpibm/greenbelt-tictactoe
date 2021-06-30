@@ -7,7 +7,7 @@ class Replay {
     this.board = new Board();
     this.movements = [];
     this.asciiMovements = [];
-    this.winner = 'O';
+    this.winner = null;
   }
 
   mapMovementsToPlayers(movements) {
@@ -26,10 +26,23 @@ class Replay {
     this.movements = this.mapMovementsToPlayers(movements);
   }
 
+  setWinner(player) {
+    if (this.board.checkForWin(player)) {
+      this.winner = player.pin;
+    }
+
+    const hasGameFinished = this.asciiMovements.length === 9;
+    const noPlayerWon = this.winner === null;
+    if (hasGameFinished && noPlayerWon) {
+      this.winner = 'draw';
+    }
+  }
+
   execute() {
     this.movements.forEach((m) => {
       this.board.drawPin(m.player, m.position);
       this.asciiMovements.push(this.board.prepareTheConsoleOutput());
+      this.setWinner(m.player);
     });
   }
 }
