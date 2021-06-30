@@ -1,0 +1,3 @@
+- I still do not have a way to print the winner
+- I have some unused objects in the board class
+- The players are glorified constants so far
