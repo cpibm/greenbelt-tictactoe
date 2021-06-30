@@ -1,0 +1,57 @@
+{
+  "name": "greenbelt-tictactoe",
+  "version": "1.0.0",
+  "description": "greenbelt-tictactoe",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll --coverage --verbose",
+    "test:coverage": "jest --collectCoverage --verbose",
+    "lint": "eslint \"**/*.js\"",
+    "fix": "eslint \"**/*.js\" --fix"
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "commitlint.config.js"
+  ],
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm test && npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^4.3.8",
+    "jest": "^27.0.6",
+    "prettier-eslint": "^12.0.0"
+  }
+}

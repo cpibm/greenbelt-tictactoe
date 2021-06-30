@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - lts/*
+cache:
+  directories:
+    - node_modules/
+script:
+  - npm run lint
+  - npm run test:coverage
+  - sonar-scanner
+addons:
+  sonarcloud:
+    organization: cpibm
+    token:
+      secure: "G+GMDpXccX4QJKVMTlgbKJx6i5ScT4M7R7/IDcOo63Xmeqkf2eDtMUKosNYcaeSPXC/hN93jFpyHkL5MQsIh5H8zgzq4h2nJeEHJrSK3bAzXBBbIFjbJ6wBXnarQxCrHBBWdh6QYIEomVWbtEHUpnA0sFt6qiTCbvx1YCWWM6hVWHg20KLcM57gxPqqQ5ymvMSJf/XR8cb0kY0YpjCU6X/LemvelCq3cIPPGlvKW1eyiQMdvCf3hbDo6ljBQ/Izf8SOG6C3Bkv/Xue0B8G8d7Zz9YSKR8sYvyL63yKk4ATFPXNBcWuALTu9U2wpSUVAFILlP6cx1MPlDeH6eQ04/lv4NjGBxA2qaiypQBQirDok9b60R2hVQWU5atFnwGB1fUAnH7t8Q1Gr4YiR7btgFDg+LYfdxGOEDV7pT2YfG0B/+pSH53O8uz1tZ4qZwicA18qJwybBS1Slr3+fwXCPxD02iyj21f30Vj3cKBxY0kKr64BNmZJYlIYGOVmusU06waqfyynAJe4HTmZjr4aDlxR+Yjd5EafaRwUjRfv7mrlR+6R2cUE31BTbUqGUCRii3x744ex7DnLK8R05JDtTtTow5Tpda5bxie3MWeIjtNv84d9M6yZ2V6cwAZvom1ddaiadV+oXT2BEgWEQHIQzwsZYkMPRsW+HDL4GH9dBslFE="
