@@ -38,6 +38,21 @@ describe('I can replay a saved game', () => {
   });
 
   describe('I can replay a vertical victory saved game', () => {
-    // const replay = new Replay();
+    const replay = new Replay();
+    const verticalMovements = [
+      { player: 'X', position: 'top-left' },
+      { player: 'O', position: 'top-center' },
+      { player: 'X', position: 'mid-left' },
+      { player: 'O', position: 'mid-center' },
+      { player: 'X', position: 'bottom-right' },
+      { player: 'O', position: 'bottom-center' },
+    ];
+
+    test('the final grid should contain ["X","O"," ","X","O"," "," ","O","X"]', () => {
+      const { board } = replay;
+      replay.loadGame(verticalMovements);
+      replay.execute();
+      expect(board.grid).toStrictEqual(['X', 'O', ' ', 'X', 'O', ' ', ' ', 'O', 'X']);
+    });
   });
 });
