@@ -4,6 +4,7 @@
   "description": "greenbelt-tictactoe",
   "main": "index.js",
   "scripts": {
+    "game": "node main.js",
     "test": "jest",
     "test:watch": "jest --watchAll --coverage --verbose",
     "test:coverage": "jest --collectCoverage --verbose",
@@ -37,7 +38,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "inquirer": "^8.1.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
