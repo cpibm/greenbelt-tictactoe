@@ -55,6 +55,13 @@ describe('I can replay a saved game', () => {
       expect(board.grid).toStrictEqual(['X', 'O', ' ', 'X', 'O', ' ', ' ', 'O', 'X']);
     });
 
+    test('the winner should be playerO', () => {
+      const replay = new Replay();
+      replay.loadGame(verticalMovements);
+      replay.execute();
+      expect(replay.winner).toEqual('O');
+    });
+
     test('a list of ASCII movements should be generated', () => {
       const expectedAsciiMovements = [
         'X| | \n-+-+-\n | | \n-+-+-\n | | ',

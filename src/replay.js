@@ -7,6 +7,7 @@ class Replay {
     this.board = new Board();
     this.movements = [];
     this.asciiMovements = [];
+    this.winner = 'O';
   }
 
   mapMovementsToPlayers(movements) {
