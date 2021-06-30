@@ -1,9 +1,6 @@
-const { PlayerX } = require('./playerX');
-
 class Board {
   constructor() {
     this.grid = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
-    this.playerX = new PlayerX();
   }
 
   isEmpty() {
