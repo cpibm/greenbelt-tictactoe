@@ -6,7 +6,7 @@ describe('API contract tests for the tictactoe game', () => {
   test('should return an empty game on /api/tictactoe/newgame', () => {
     const expectedResponse = {
       winner: null,
-      board: [],
+      board: [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
       movements: [],
       asciiMovements: [],
       player: 'X',
